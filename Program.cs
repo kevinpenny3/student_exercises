@@ -30,6 +30,9 @@ namespace StudentExercises
             Instructor steve = new Instructor("Steve", "Brownlee", "choortlehort", "Cohort 37", "dad jokes");
             Instructor mo = new Instructor("Mo", "Silvera", "MoCodeLessProblems", "Cohort 36", "Cheesecakes");
             Instructor leah = new Instructor("Leah", "Hoeffling", "LeahLemurLady", "Cohort 35", "petting lemurs");
+            cohort35.AddInstructor(leah);
+            cohort36.AddInstructor(mo);
+            cohort37.AddInstructor(steve);
 
         }
     }
