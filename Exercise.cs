@@ -11,5 +11,6 @@ namespace StudentExercises
             Name = name;
             Language = language;
         }
+
     }
 }
