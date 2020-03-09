@@ -5,7 +5,7 @@ namespace StudentExercises
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string SlackHandle { get; set; }
-        public string Cohort { get; set; }
+        public Cohort cohort { get; set; }
         public string Specialty { get; set; }
 
         public void AddExercise(Student student, Exercise exercise)
@@ -13,12 +13,12 @@ namespace StudentExercises
             student.Exercises.Add(exercise);
         }
 
-        public Instructor(string aName, string bName, string slack, string cohort, string specialty)
+        public Instructor(string aName, string bName, string slack, Cohort cohortName, string specialty)
         {
             FirstName = aName;
             LastName = bName;
             SlackHandle = slack;
-            Cohort = cohort;
+            cohort = cohortName;
             Specialty = specialty;
         }
 
