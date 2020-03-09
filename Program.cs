@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace StudentExercises
 {
@@ -10,9 +11,9 @@ namespace StudentExercises
 
             // create the exercises
             Exercise nutshell = new Exercise("nutshell", "React");
-            Exercise holidayRoad = new Exercise("Holiday Road", "JavaScript");
+            Exercise holidayRoad = new Exercise("Holiday Road", "C#");
             Exercise fitted = new Exercise("Fitted", "React");
-            Exercise bangazon = new Exercise("Bangazon", "C# and .Net");
+            Exercise bangazon = new Exercise("Bangazon", "C#");
 
             //create the students
             Student kevin = new Student("Kevin", "Penny", "kpen3", "Cohort 36");
@@ -56,7 +57,7 @@ namespace StudentExercises
             steve.AddExercise(james, bangazon);
 
             // create list of students
-            List<Student> studentsList = new List<Student>();
+            var studentsList = new List<Student>();
             studentsList.Add(kevin);
             studentsList.Add(namita);
             studentsList.Add(audrey);
@@ -64,7 +65,7 @@ namespace StudentExercises
             studentsList.Add(jansen);
 
             // create list of exercises
-            List<Exercise> exercisesList = new List<Exercise>();
+            var exercisesList = new List<Exercise>();
             exercisesList.Add(nutshell);
             exercisesList.Add(fitted);
             exercisesList.Add(holidayRoad);
@@ -84,6 +85,16 @@ namespace StudentExercises
                         }
                     }
                 }
+            }
+
+            var allReactExercises = exercisesList.Where(langExercise =>
+            {
+                return langExercise.Language == "React";
+            });
+
+            foreach (var langExercise in allReactExercises)
+            {
+                Console.WriteLine(langExercise.Name);
             }
 
         }
